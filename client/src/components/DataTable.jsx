@@ -1,31 +1,31 @@
 import React from "react";
 
 const DataTable = ({ data, onDelete, onEdit }) => {
-  if (!data.length) return <p>No records found.</p>; // show message if no rows
+  if (!data.length) return <p>No records found.</p>;
 
-  const headers = Object.keys(data[0]); // extract column names from first row
+  const headers = Object.keys(data[0]);
 
   return (
-    <table className="min-w-full border border-collapse">
+    <table className="min-w-full border border-gray-400 border-collapse">
       <thead className="bg-gray-100">
-        <tr className="divide-x">
+        <tr>
           {headers.map((h) => (
-            <th key={h} className="px-3 py-2 text-left">
+            <th key={h} className="px-4 py-2 text-left border border-gray-400">
               {h}
             </th>
           ))}
-          <th className="px-3 py-2">Actions</th>
+          <th className="px-4 py-2 border border-gray-400">Actions</th>
         </tr>
       </thead>
       <tbody>
         {data.map((row) => (
-          <tr key={row.id} className="divide-x hover:bg-gray-50">
+          <tr key={row.id} className="hover:bg-gray-50">
             {headers.map((h) => (
-              <td key={h} className="px-3 py-2">
+              <td key={h} className="px-3 py-2 border border-gray-400">
                 {row[h]}
               </td>
             ))}
-            <td className="px-3 py-2">
+            <td className="px-3 py-2 border border-gray-400">
               <button
                 onClick={() => onEdit(row)}
                 className="mr-3 text-blue-600 hover:underline"
