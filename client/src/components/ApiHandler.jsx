@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "/api";
+const API = "http://localhost:5000/api";
 
 // Fetch all cars
 export const fetchCars = async () => {
